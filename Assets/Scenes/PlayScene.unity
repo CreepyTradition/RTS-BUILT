@@ -225,6 +225,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   allUnitsList: []
   unitsSelected: []
+  clickable:
+    serializedVersion: 2
+    m_Bits: 128
+  ground:
+    serializedVersion: 2
+    m_Bits: 64
+  groundMarker: {fileID: 0}
 --- !u!1 &1028742949
 GameObject:
   m_ObjectHideFlags: 0
