@@ -31,7 +31,7 @@ public class MaleAAttackState : StateMachineBehaviour
         {
             LookAtTarget();
 
-            agent.SetDestination(attackController.targetToAttack.position);
+            //agent.SetDestination(attackController.targetToAttack.position);
 
             if (attackTimer <= 0)
             {
@@ -40,7 +40,7 @@ public class MaleAAttackState : StateMachineBehaviour
             }
             else
             {
-                attackTimer = Time.deltaTime;
+                attackTimer -= Time.deltaTime;
             }
 
 
@@ -51,7 +51,10 @@ public class MaleAAttackState : StateMachineBehaviour
             {
                 animator.SetBool("IsAttacking", false);
             }
-
+        }
+        else
+        {
+            animator.SetBool("IsAttacking", false);
         }
     }
 

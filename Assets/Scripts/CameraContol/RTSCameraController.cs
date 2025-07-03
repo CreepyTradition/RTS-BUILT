@@ -5,6 +5,7 @@ public class RTSCameraController : MonoBehaviour
 {
     public static RTSCameraController instance;
 
+
     // If we want to select an item to follow, inside the item script add:
     // public void OnMouseDown(){
     //   CameraController.instance.followTransform = transform;
