@@ -15,12 +15,17 @@ public class Unit : MonoBehaviour
         UnitSelectionManager.Instance.allUnitsList.Add(gameObject);
 
         unitHealth = unitMaxHealth;
-        UpdateHealth();
+        UpdateHealthUI();
     }
 
-    private void UpdateHealth()
+    private void UpdateHealthUI()
     {
-        throw new NotImplementedException();
+        healthTracker.UpdateSliderValue(unitHealth, unitMaxHealth);
+
+        if (unitHealth <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 
     private void OnDestroy()
@@ -30,6 +35,7 @@ public class Unit : MonoBehaviour
 
     internal void TakeDamage(int damageToInflict)
     {
-        throw new NotImplementedException();
+        unitHealth -= damageToInflict;
+        UpdateHealthUI();
     }
 }
